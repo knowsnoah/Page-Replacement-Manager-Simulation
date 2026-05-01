@@ -1,0 +1,28 @@
+#PART 1
+This is the pseudo code for First In, First Out Replacement Algorithm
+
+fifo(referenceString, frameSize)
+
+    Create an empty list called frames 
+    Create an empty queue to track insertion order
+    Set pageFaults = 0 
+
+    For each page in referenceString:
+        if page is already in frames:
+            Output current frames
+        else:
+            increment pageFaults
+
+            if frames has space:
+                Add page to frames
+                Add page to queue
+            else:
+                Remove the page at the front of the queue
+                Remove that page from frames
+
+                Add the new page to frames
+                Add the new page to queue
+            
+            mark this as a page fault 
+
+    Output total page faults

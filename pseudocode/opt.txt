@@ -1,0 +1,34 @@
+#PART 1
+This is the pseudo code for Optimal Page Replacement Algorithm
+
+OPT(referenceString, frameSize)
+
+    Create an empty list called frames 
+    Set pageFaults = 0
+
+    for each poistion i in referenceString:
+        page = referenceString[i]
+
+        if page is already in frames:
+            Output current frames
+        else:
+            increment pageFaults
+
+            if frames has space:
+                Add page to frames
+            else:
+                for each page p in frames:
+                    Find the next use of p after position if
+
+                    If p is not used again:
+                        Select p
+                        Stop searching
+
+                if all pages are used again:
+                    Select the page with the farthest next use
+                
+                Replace the selected page with the current page
+            
+            Mark this as a page fault
+    
+    Output total page faults

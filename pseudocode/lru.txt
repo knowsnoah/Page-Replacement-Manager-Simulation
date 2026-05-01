@@ -1,0 +1,28 @@
+#PART 1
+This is the pseudo code for Least Recently Used replacement Algorithm
+
+LRU(referenceString, frameSize)
+
+    Create an empty list called frames 
+    Create a structure called lastUsed to track usage
+    Set pageFaults = 0
+
+    for each position i in referenceString:
+        page = referenceString[i]
+
+        if page is already in frames:
+            Update lastUsed[page] = i
+            Output current frames
+        else:
+            increment pageFaults
+
+            if frames has space:
+                Add page to frames 
+            else:
+                Find the page in frames with the smallest lastUsed value
+                Replace that page with the new page
+
+            Update lastUsed[page] = i
+            Mark this as a pageFault
+
+    Output total page faults
