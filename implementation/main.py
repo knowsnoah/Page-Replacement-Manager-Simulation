@@ -2,9 +2,9 @@
 #Testing the three algorithm implemented in Part 2 of the project.
 
 #importing the three algorithms from their respective files
-from implementation.fifo import fifo
-from implementation.lru import lru
-from implementation.opt import opt
+from fifo import fifo
+from lru import lru
+from opt import opt
 
 import random
 
@@ -24,5 +24,17 @@ def generateTestingData(filename="TestingData.txt", numStrings=50, stringLength=
 def generate_average():
     return
 
+
+def readTestingData(filename="TestingData.txt"):
+    referenceStrings = []
+    with open(filename, "r") as file:
+        for line in file:
+            referenceStrings.append([int(x) for x in line.strip()])
+    return referenceStrings
+
+
 if __name__ == "__main__":
+    generateTestingData()
+    print("Testing data generated in 'TestingData.txt'.")
+
     generate_average()
