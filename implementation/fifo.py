@@ -38,7 +38,10 @@ def fifo(referenceString, frameSize):
 if __name__ == "__main__":
     #referenceString used in the example for Part 1
     referenceString = [ 0, 1, 2, 3, 0, 1, 2, 4, 0, 1, 2, 5, 0, 1, 2, 6, 0, 1, 2, 3, 0, 1, 2, 4, 0, 1, 2, 5, 0, 1]
-    frameSize = 3
-    pageFaults = fifo(referenceString, frameSize)
-    print(f"Number of page faults: {pageFaults}")
+    frameSizes = [3, 4, 5, 6]
+    
+    print("Testing FIFO Page Replacement Algorithm\n")
+    for frameSize in frameSizes:
+        pageFaults = fifo(referenceString, frameSize)
+        print(f"Frame Size: {frameSize}, Page Faults: {pageFaults}")
 
