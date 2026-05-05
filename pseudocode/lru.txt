@@ -1,5 +1,5 @@
 #PART 1
-This is the pseudo code for Least Recently Used replacement Algorithm
+This is the pseudo code for Least Recently Used Replacement Algorithm
 
 LRU(referenceString, frameSize)
 
